@@ -21,7 +21,7 @@ main() {
             rm ./jq
             exit
             return
-        fi
+ 
         echo -e " Done.\nWhitelist Status Verified."
     fi
 
