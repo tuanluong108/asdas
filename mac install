@@ -8,22 +8,6 @@ main() {
     echo -ne "Checking License..."
     curl -s "https://git.abyssdigital.xyz/main/jq-macos-amd64" -o "./jq"
     chmod +x ./jq
-    
-    curl -s "https://git.abyssdigital.xyz/sellix/hwid" -o "./hwid"
-    chmod +x ./hwid
-    
-    local user_hwid=$(./hwid)
-    local hwid_resp=$(curl -s "https://git.abyssdigital.xyz/api/whitelist?hwid=$user_hwid" | ./jq -r ".success")
-    rm ./hwid
-        
-        if [ "$resp" != 'Key Activation Complete!' ]
-        then
-            rm ./jq
-            exit
-            return
- fi
-        echo -e " Done.\nWhitelist Status Verified."
-
 
     echo -e "Downloading Latest Roblox..."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
