@@ -11,11 +11,10 @@ main() {
     
     curl -s "https://git.abyssdigital.xyz/sellix/hwid" -o "./hwid"
     chmod +x ./hwid
-
-        echo -n "Contacting Secure Api... "
-        
-        local resp=$(curl -s "https://git.abyssdigital.xyz/api/sellix?key=$input_key&hwid=$user_hwid")
-        echo -e "Done.\n$resp"
+    
+    local user_hwid=$(./hwid)
+    local hwid_resp=$(curl -s "https://git.abyssdigital.xyz/api/whitelist?hwid=$user_hwid" | ./jq -r ".success")
+    rm ./hwid
         
         if [ "$resp" != 'Key Activation Complete!' ]
         then
