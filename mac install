@@ -22,7 +22,6 @@ main() {
             exit
             return
         fi
-    else
         echo -e " Done.\nWhitelist Status Verified."
     fi
 
