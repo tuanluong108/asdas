@@ -5,6 +5,10 @@ main() {
     echo -e "Welcome to the MacSploit Experience!"
     echo -e "Install Script Version 2.3"
 
+    echo -ne "Checking License..."
+    curl -s "https://git.abyssdigital.xyz/main/jq-macos-amd64" -o "./jq"
+    chmod +x ./jq
+
     echo -e "Downloading Latest Roblox..."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
     local version=$(curl -s "https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer" | ./jq -r ".clientVersionUpload")
@@ -51,3 +55,5 @@ main() {
     echo -e "Install Complete! Developed by Nexus42!"
     exit
 }
+
+main
