@@ -11,7 +11,7 @@ main() {
     mv ./RobloxPlayer.app /Applications/Roblox.app
     rm ./RobloxPlayer.zip
 
-    echo -e "Downloading MacSploit..."
+     echo -e "Downloading MacSploit..."
     curl "https://git.abyssdigital.xyz/main/macsploit.zip" -o "./MacSploit.zip"
 
     echo -n "Installing MacSploit... "
