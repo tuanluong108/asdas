@@ -1,7 +1,6 @@
 #!/bin/bash
 
 main() {
-    main() {
     clear
     echo -e "Welcome to the MacSploit Experience!"
     echo -e "Install Script Version 2.3"
