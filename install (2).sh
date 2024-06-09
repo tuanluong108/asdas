@@ -5,12 +5,11 @@ main() {
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
     curl "http://setup.rbxcdn.com/mac/$version-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
 
-    echo -n "Installing Latest Roblox... "
+    echo -e "Installing Latest Roblox"
     [ -d "/Applications/Roblox.app" ] && rm -rf "/Applications/Roblox.app"
     unzip -o -q "./RobloxPlayer.zip"
     mv ./RobloxPlayer.app /Applications/Roblox.app
     rm ./RobloxPlayer.zip
-    echo -e "Done."
 
     echo -e "Downloading MacSploit..."
     curl "https://git.abyssdigital.xyz/main/macsploit.zip" -o "./MacSploit.zip"
