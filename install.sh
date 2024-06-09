@@ -3,7 +3,7 @@
 main() {
     clear
     echo -e "Welcome to the MacSploit Experience!"
-    echo -e "Install Script Version 2.3
+    echo -e "Install Script Version 2.3"
     
     echo -e "Downloading Latest Roblox..."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
