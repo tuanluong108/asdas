@@ -23,12 +23,11 @@ main() {
     echo -e "Done."
     
     
-    echo -e "Downloading macSploit.dylib..."
-    curl "https://github.com/tuanluong108/milolo/raw/script/macsploit.zip" -o "./macsploit.zip"
+    echo -e "Downloading MacSploit"
+    curl -O "https://github.com/tuanluong108/milolo/raw/script/macsploit.zip"
 
-    echo -n "Installing macSploit.dylib... "
-    unzip -o -q "./macsploit.zip"
-    echo -e "Done."
+    echo -e "Installing MacSploit"
+    unzip -o -q "./macSploit.zip"
 
 
     echo -e "Downloading MacSploit..."
