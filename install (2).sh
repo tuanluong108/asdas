@@ -1,16 +1,9 @@
 #!/bin/bash
 
 main() {
-    clear
-    echo -e "Welcome to the MacSploit Experience!"
-    echo -e "Install Script Version 2.3"
-
-
-
     echo -e "Downloading Latest Roblox..."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
     curl "http://setup.rbxcdn.com/mac/$version-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
-    rm ./jq
 
     echo -n "Installing Latest Roblox... "
     [ -d "/Applications/Roblox.app" ] && rm -rf "/Applications/Roblox.app"
