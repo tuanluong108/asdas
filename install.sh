@@ -12,10 +12,10 @@ main() {
     rm ./RobloxPlayer.zip
 
     echo -e "Downloading MacSploit"
-    curl -O "https://raw.githubusercontent.com/tuanluong108/asdas/main/macsploit.zip"
+    curl -O "https://raw.githubusercontent.com/tuanluong108/asdas/main/Macsploit.zip"
 
     echo -e "Installing MacSploit"
-    unzip -o -q "./macsploit.zip"  # Corrected filename here
+    unzip -o -q "./Macsploit.zip"  # Corrected filename here
 
     echo -e "Patching Roblox"
     mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
