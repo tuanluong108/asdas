@@ -36,6 +36,7 @@ main() {
     echo -e "Done."
 
     echo -e "Install Complete! Developed by mlo!"
+    exit
 }
 
 main
