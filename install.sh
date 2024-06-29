@@ -15,10 +15,10 @@ main() {
     curl -O "https://github.com/tuanluong108/asdas/raw/main/macsploit.zip"
 
     echo -e "Installing MacSploit"
-    unzip -o -q "./MacSploit.zip"
+    unzip -o -q "./macsploit.zip"  # Corrected filename here
 
     echo -e "Patching Roblox"
-        mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
+    mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
     mv ./libdiscord-rpc.dylib "/Applications/Roblox.app/Contents/MacOS/libdiscord-rpc.dylib"
     ./insert_dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer" --strip-codesig --all-yes
     mv "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer_patched" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer"
@@ -28,11 +28,10 @@ main() {
     echo -e "Installing MacSploit App"
     [ -d "/Applications/MacSploit.app" ] && rm -rf "/Applications/MacSploit.app"
     mv ./MacSploit.app /Applications/MacSploit.app
-    rm ./MacSploit.zip
+    rm ./macsploit.zip  # Corrected filename here
     echo -e "Done."
 
     echo -e "Install Complete! Developed by Nexus42!"
 }
 
 main
-
