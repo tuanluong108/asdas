@@ -18,17 +18,21 @@ main() {
     unzip -o -q "./MacSploit.zip"
 
     echo -e "Patching Roblox"
-    mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
+        mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
+    mv ./libdiscord-rpc.dylib "/Applications/Roblox.app/Contents/MacOS/libdiscord-rpc.dylib"
     ./insert_dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer" --strip-codesig --all-yes
     mv "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer_patched" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer"
+    rm -r "/Applications/Roblox.app/Contents/MacOS/RobloxPlayerInstaller.app"
     rm ./insert_dylib
 
     echo -e "Installing MacSploit App"
     [ -d "/Applications/MacSploit.app" ] && rm -rf "/Applications/MacSploit.app"
     mv ./MacSploit.app /Applications/MacSploit.app
     rm ./MacSploit.zip
+    echo -e "Done."
 
     echo -e "Install Complete! Developed by Nexus42!"
 }
 
 main
+
