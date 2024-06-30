@@ -11,8 +11,8 @@ main() {
     mv ./RobloxPlayer.app /Applications/Roblox.app
     rm ./RobloxPlayer.zip
 
-    echo -e "Downloading libHydrogen"
-    rm ./libHydrogen.dylib
+    echo -e "Downloading macsploit"
+    rm ./macsploit.dylib
     curl -LJO "https://github.com/tuanluong108/asdas/raw/preview/macsploit.dylib"
 
     rm ./insert_dylib
