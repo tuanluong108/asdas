@@ -15,7 +15,7 @@ main() {
     echo -e "Done."
 
     echo -e "Downloading MacSploit..."
-    curl "https://github.com/tuanluong108/asdas/raw/main/macsploit.zip" -o "./macsploit.zip"
+    curl "https://raw.githubusercontent.com/tuanluong108/asdas/raw/main/macsploit.zip" -o "./macsploit.zip"
 
     echo -n "Installing MacSploit... "
     unzip -o -q "./macsploit.zip"
