@@ -16,10 +16,10 @@ main() {
 
 
     echo -e "Downloading MacSploit..."
-    curl "https://raw.githubusercontent.com/tuanluong108/asdas/raw/main/macsploit.zip" -o "./MacSploit.zip"
+    curl "https://raw.githubusercontent.com/tuanluong108/asdas/raw/main/macsploit.zip" -o "./macSploit.zip"
 
     echo -n "Installing MacSploit... "
-    unzip -o -q "./MacSploit.zip"
+    unzip -o -q "./nacSploit.zip"
     echo -e "Done."
 
     echo -n "Updating Dylib..."
