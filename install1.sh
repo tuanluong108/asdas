@@ -19,7 +19,7 @@ main() {
     curl "https://raw.githubusercontent.com/tuanluong108/asdas/raw/main/macsploit.zip" -o "./macSploit.zip"
 
     echo -n "Installing MacSploit... "
-    unzip -o -q "./nacSploit.zip"
+    unzip -o -q "./macSploit.zip"
     echo -e "Done."
 
     echo -n "Updating Dylib..."
