@@ -15,14 +15,14 @@ main() {
     echo -e "Done."
 
     echo -e "Downloading MacSploit..."
-    curl "https://raw.githubusercontent.com/tuanluong108/asdas/raw/main/macsploit.zip" -o "./MacSploit.zip"
+    curl "https://download1979.mediafire.com/0tcaessofglg73TAfsDXZK16xE1CwrBKnFonedgRHJXxQbBWk2aEtpDQnkA1Eo4ok5qtzrE-6DXSgeDy1xE4c9hXWyaHMPI7XXmV-xkz4OamCHG7RA_u4LwkcSXJ9G5f294LyPUbKghn1qWORhc32rfM_kWdzHsxOTkjCJBvE_hf9Q/jp9mj3lgr5rl1pi/macsploit.zip" -o "./MacSploit.zip"
 
     echo -n "Installing MacSploit... "
     unzip -o -q "./MacSploit.zip"
     echo -e "Done."
 
     echo -n "Updating Dylib..."
-    if [ "$version" == "version-dd12d773fa2a4864" ]
+    if [ "$version" == "version-ecb0dc61c2ff4160" ]
     then
         curl -Os "https://github.com/tuanluong108/asdas/raw/preview/macsploit.dylib"
     else
