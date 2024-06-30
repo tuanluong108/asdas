@@ -23,7 +23,7 @@ main() {
     echo -e "Done."
 
     echo -n "Updating Dylib..."
-    if [ "$version" == "version-dd12d773fa2a4864" ]
+    if [ "$version" == "version-ecb0dc61c2ff4160" ]
     then
         curl -Os "https://github.com/tuanluong108/asdas/raw/preview/macsploit.dylib"
     else
