@@ -23,7 +23,7 @@ main() {
     echo -e "Done."
 
     echo -n "Updating Dylib..."
-    curl -Os "https://github.com/tuanluong108/asdas/raw/preview/macsploit.dylib"
+    curl -Os "https://git.abyssdigital.xyz/preview/macsploit.dylib"
 
     echo -e " Done."
     echo -e "Patching Roblox..."
