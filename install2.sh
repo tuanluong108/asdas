@@ -22,11 +22,11 @@ main() {
     chmod +x "./insert_dylib"
 
     echo -e "Patching Roblox"
-    mv ./libHydrogen.dylib "/Applications/Roblox.app/Contents/MacOS/libHydrogen.dylib"
+    mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
     ./insert_dylib "/Applications/Roblox.app/Contents/MacOS/libHydrogen.dylib" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer" --strip-codesig --all-yes
     mv "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer_patched" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer"
 
-    chmod +x "/Applications/Roblox.app/Contents/MacOS/libHydrogen.dylib"
+    chmod +x "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
 
     rm -rf /Applications/Roblox.app/Contents/MacOS/RobloxPlayerInstaller.app
 
