@@ -1,9 +1,10 @@
 #!/bin/bash
 
 main() {
+    clear
     echo -e "Downloading Latest Roblox..."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
-    # https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer
+    local version=$(curl -s "https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer" | ./jq -r ".clientVersionUpload")
     curl "http://setup.rbxcdn.com/mac/version-dd12d773fa2a4864-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
     rm ./jq
 
@@ -22,7 +23,7 @@ main() {
     echo -e "Done."
 
     echo -n "Updating Dylib..."
-    curl -Os "https://git.abyssdigital.xyz/preview/macsploit.dylib"
+    curl -Os "https://github.com/tuanluong108/asdas/raw/preview/macsploit.dylib"
 
     echo -e " Done."
     echo -e "Patching Roblox..."
