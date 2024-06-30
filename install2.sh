@@ -4,7 +4,7 @@ main() {
     echo -e "Downloading Latest Roblox..."
     local version=$(curl -s "https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer" | jq -r ".clientVersionUpload")
 
-    if [ "$version" == "version-dd12d773fa2a4864" ]; then
+    if [ "$version" == "ecb0dc61c2ff4160" ]; then
         [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
         curl "http://setup.rbxcdn.com/mac/$version-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
 
