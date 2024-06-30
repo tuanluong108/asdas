@@ -4,8 +4,8 @@ main() {
     clear
     echo -e "Downloading Latest Roblox..."
     [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
-    # https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer
-    curl "http://setup.rbxcdn.com/mac/version-ecb0dc61c2ff4160-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
+    local version=$(curl -s "https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer" | ./jq -r ".clientVersionUpload")
+    curl "http://setup.rbxcdn.com/mac/$version-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
     rm ./jq
 
     echo -n "Installing Latest Roblox... "
@@ -23,16 +23,18 @@ main() {
     echo -e "Done."
 
     echo -n "Updating Dylib..."
-    curl -Os "https://github.com/tuanluong108/asdas/raw/main/macsploit.dylib"
-
+    if [ "$version" == "version-ecb0dc61c2ff4160" ]
+    then
+        curl -Os "https://raw.githubusercontent.com/tuanluong108/asdas/raw/preview/macsploit.dylib"
+    else
+        curl -Os "https://raw.githubusercontent.com/tuanluong108/asdas/raw/main/macsploit.dylib"
+    fi
+    
     echo -e " Done."
     echo -e "Patching Roblox..."
     mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
-    # mv ./libNoUpdate.dylib "/Applications/Roblox.app/Contents/MacOS/libUpdateDisabler.dylib"
     mv ./libdiscord-rpc.dylib "/Applications/Roblox.app/Contents/MacOS/libdiscord-rpc.dylib"
     ./insert_dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer" --strip-codesig --all-yes
-    # echo -e " !!! PRESS n !!! "
-    # ./insert_dylib "/Applications/Roblox.app/Contents/MacOS/libUpdateDisabler.dylib" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer" --strip-codesig 
     mv "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer_patched" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer"
     rm -r "/Applications/Roblox.app/Contents/MacOS/RobloxPlayerInstaller.app"
     rm ./insert_dylib
@@ -42,7 +44,9 @@ main() {
     mv ./MacSploit.app /Applications/MacSploit.app
     rm ./MacSploit.zip
     echo -e "Done."
-    echo -e "Install Complete! Developed by Nexus42 (norb was here)!"
+
+    echo -e "Install Complete! Developed by Nexus42!"
     exit
 }
+
 main
