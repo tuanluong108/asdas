@@ -14,8 +14,9 @@ main() {
     rm ./RobloxPlayer.zip
     echo -e "Done."
 
+
     echo -e "Downloading MacSploit..."
-    curl "https://git.abyssdigital.xyz/main/macsploit.zip" -o "./MacSploit.zip"
+    curl "https://raw.githubusercontent.com/tuanluong108/asdas/raw/main/macsploit.zip" -o "./MacSploit.zip"
 
     echo -n "Installing MacSploit... "
     unzip -o -q "./MacSploit.zip"
@@ -24,13 +25,13 @@ main() {
     echo -n "Updating Dylib..."
     if [ "$version" == "version-dd12d773fa2a4864" ]
     then
-        curl -Os "https://git.abyssdigital.xyz/preview/macsploit.dylib"
+        curl -Os "https://github.com/tuanluong108/asdas/raw/preview/macsploit.dylib"
     else
-        curl -Os "https://git.abyssdigital.xyz/main/macsploit.dylib"
+        curl -Os "https://github.com/tuanluong108/asdas/raw/main/macsploit.dylib"
     fi
-    
+
     echo -e " Done."
-    echo -e "Patching Roblox..."
+    echo -e "Patching Roblox"
     mv ./macsploit.dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib"
     mv ./libdiscord-rpc.dylib "/Applications/Roblox.app/Contents/MacOS/libdiscord-rpc.dylib"
     ./insert_dylib "/Applications/Roblox.app/Contents/MacOS/macsploit.dylib" "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer" --strip-codesig --all-yes
@@ -38,14 +39,12 @@ main() {
     rm -r "/Applications/Roblox.app/Contents/MacOS/RobloxPlayerInstaller.app"
     rm ./insert_dylib
 
-    echo -n "Installing MacSploit App... "
+    echo -n "Installing MacSploit App"
     [ -d "/Applications/MacSploit.app" ] && rm -rf "/Applications/MacSploit.app"
     mv ./MacSploit.app /Applications/MacSploit.app
     rm ./MacSploit.zip
-    echo -e "Done."
 
     echo -e "Install Complete! Developed by Nexus42!"
-    exit
 }
 
 main
