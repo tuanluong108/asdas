@@ -45,6 +45,7 @@ main() {
     rm ./MacSploit.zip
 
     echo -e "Install Complete! Developed by Nexus42!"
+    exit
 }
 
 main
